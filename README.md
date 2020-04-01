@@ -159,11 +159,19 @@ providing Spacemacs icon.
 See [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) for more
 information.
 
-*Note*: to have the title bar match your theme background color,
-consider using instead:
+*Note*: there was previously an option to install `emacs-plus` with the
+`--with-natural-title-bars` flag. This has been removed - to make the title bar
+match your theme background color, one of the following to your `init.el`
+file:
 
-``` sh
-$ brew install emacs-plus --HEAD --with-natural-title-bars
+```elisp
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+```
+or:
+```elisp
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . light))
 ```
 
 *Note:* after you have completed the [install process](#install) below, it is
